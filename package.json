@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint src/**/*.ts test/**/*.ts",
-    "dev": "tsx watch src/**/*.ts",
+    "dev": "nodemon ./src/server.ts",
     "lint:fix": "eslint src/**/*.ts test/**/*.ts --fix",
     "test": "vitest run",
     "test:dev": "vitest",
@@ -35,8 +35,12 @@
     "eslint-plugin-import": "^2.25.2",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
+    "nodemon": "^2.0.19",
     "tsx": "^3.9.0",
     "typescript": "*",
     "vitest": "^0.22.1"
+  },
+  "dependencies": {
+    "@types/node": "^18.7.14"
   }
 }
