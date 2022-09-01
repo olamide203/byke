@@ -1,17 +1,19 @@
 {
   "name": "ts-starter",
+  "packageManager": "pnpm@7.9.5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "lint": "eslint src/**/*.ts test/**/*.ts",
-    "dev": "nodemon ./src/server.ts",
+    "dev": "NODE_ENV=development nodemon ./src/server.ts",
+    "start": "node server.js",
     "lint:fix": "eslint src/**/*.ts test/**/*.ts --fix",
     "test": "vitest run",
     "test:dev": "vitest",
     "typecheck": "tsc --noEmit",
-    "build": "tsc",
+    "build": "tsc && eslint build/**/*.js --fix",
     "prepare": "husky install"
   },
   "config": {
@@ -26,6 +28,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.7.14",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.36.1",
     "cz-conventional-changelog": "3.3.0",
@@ -39,8 +42,5 @@
     "tsx": "^3.9.0",
     "typescript": "*",
     "vitest": "^0.22.1"
-  },
-  "dependencies": {
-    "@types/node": "^18.7.14"
   }
 }
