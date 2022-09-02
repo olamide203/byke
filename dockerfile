@@ -13,7 +13,7 @@ RUN pnpm install --prod --ignore-scripts
 
 
 ENV NODE_ENV production
-ENV PORT 80
-EXPOSE  $PORT
+ENV PORT 3000
+EXPOSE  $PORT 80
 
 CMD ["pnpm", "start"]

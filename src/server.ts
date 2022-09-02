@@ -12,7 +12,7 @@ const server = createServer((socket) => {
 
 if (process.env.NODE_ENV === 'production') {
   server.listen(parseInt(process.env.PORT || '3000', 10), () => {
-    console.log('server is running');
+    console.log(`server is running on port ${process.env.PORT}`);
   });
 } else {
   server.listen(parseInt(process.env.PORT || '3000', 10), '127.0.0.1', () => {
